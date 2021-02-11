@@ -10,7 +10,7 @@ before_install:
 script:
   - docker run ehsan5505/docker-react npm run test -- --coverage  
 
-install: travis_wait 30 mvn install
+install: travis_wait 30 mvn -e install
 
 deploy:
   provider: elasticbeanstalk
