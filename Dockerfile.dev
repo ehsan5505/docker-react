@@ -5,10 +5,6 @@ WORKDIR /app/
 COPY package.json .
 RUN npm install
 
-RUN npm install -g --unsafe-perm=true --allow-root
-RUN chmod -R 777 node_modules
-
-
 COPY . .
 
 CMD ["npm","run","start"]
