@@ -1,17 +1,16 @@
 language: generic
 
 sudo: required
+install: travis_wait 30 mvn -e install
 services:
   - docker
 
 before_install:
-  - mvn clean install
   - docker build -t ehsan5505/docker-react -f Dockerfile.dev .
 
 script:
   - docker run ehsan5505/docker-react npm run test -- --coverage  
 
-install: travis_wait 30 mvn -e install
 
 deploy:
   provider: elasticbeanstalk
