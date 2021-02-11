@@ -5,6 +5,8 @@ services:
   - docker
 
 before_install:
+  - echo 'DOCKER_OPTS="$DOCKER_OPTS --registry-mirror=https://mirror.gcr.io"'
+  - service docker restart
   - docker build -t ehsan5505/docker-react -f Dockerfile.dev .
 
 script:
