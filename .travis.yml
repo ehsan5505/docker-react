@@ -5,7 +5,6 @@ services:
   - docker
 
 before_install:
-  - cd app
   - mvn clean install
   - docker build -t ehsan5505/docker-react -f Dockerfile.dev .
 
